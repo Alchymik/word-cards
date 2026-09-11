@@ -41,7 +41,7 @@ npm run build
 
 Прод-версия задеплоена на Vercel:
 
-https://word-cards-alchymik.vercel.app
+https://word-cards-rosy.vercel.app/
 
 ## Структура проекта
 
@@ -78,69 +78,6 @@ src/
 | Логин | Пароль |
 |-------|--------|
 | admin | admin  |
-
-## Деплой
-
-### 1. Пуш на GitHub
-
-```bash
-git init
-git add .
-git commit -m "init word cards app"
-git branch -M main
-git remote add origin https://github.com/Alchymik/word-cards.git
-git push -u origin main
-```
-
-### 2. Деплой на Vercel
-
-1. Зайти на https://vercel.com
-2. Войти через GitHub
-3. **Add New → Project** → выбрать `word-cards`
-4. Framework Preset: **Create React App**
-5. Build Command: `npm run build`
-6. Output Directory: `build`
-7. **Deploy**
-
-Готово — ссылка вида `https://word-cards-alchymik.vercel.app`.
-
-### Альтернатива: GitHub Pages
-
-Установить `gh-pages`:
-
-```bash
-npm install gh-pages --save-dev
-```
-
-Добавить в `package.json`:
-
-```json
-{
-  "homepage": "https://Alchymik.github.io/word-cards",
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-  }
-}
-```
-
-Заменить в `src/index.tsx` `BrowserRouter` на `HashRouter`:
-
-```tsx
-import { HashRouter } from 'react-router-dom';
-
-<HashRouter>
-  <App />
-</HashRouter>
-```
-
-Задеплоить:
-
-```bash
-npm run deploy
-```
-
-Ссылка: https://Alchymik.github.io/word-cards/
 
 ## Скрипты
 
